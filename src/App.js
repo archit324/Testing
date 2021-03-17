@@ -6,6 +6,7 @@ import { Card } from 'react-bootstrap';
 import Travel from './components/blank';
 import Home from './components/home';
 import {Route,Switch} from 'react-router-dom';
+import StatusTable from './components/statusTable';
 class App extends Component {
  
   render() {
@@ -15,15 +16,14 @@ class App extends Component {
           <Card.Header>
             <Navtravel></Navtravel>
           </Card.Header>
-            <StatusBar>
-              </StatusBar>
             <Switch>
          <Route path="/Travel" component={Travel}></Route>
          <Route path="/" component={Home}></Route>
          
         </Switch>
-        
         </Card>
+        
+        <StatusTable></StatusTable>
       </div>
     );
   }
