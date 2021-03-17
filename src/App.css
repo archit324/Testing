@@ -41,4 +41,10 @@
   }
 }
 
+.border-outer{
+  border:  1px solid;
+}
 
+.paddingtop10{
+  padding-top: 4em;
+}

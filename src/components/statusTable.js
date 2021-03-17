@@ -1,53 +1,54 @@
 import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table'
 import GridTable from '@nadavshaar/react-grid-table';
+import { Card } from 'react-bootstrap';
 class StatusTable extends Component{
 
     rows = [
         { 
             "id": 1, 
-            "Requestor": "wotham0", 
-            "TripId": "Male", 
+            "Requestor": "Michael", 
+            "TripId": "1889289", 
             "RequestDate": "12/08/2019", 
             "TravelDate": "03/08/2019",
             "servicerequested": "B/Y",
-            "estimatedcost": "",
+            "estimatedcost": "6577",
         },
         { 
             "id": 2, 
-            "Requestor": "dbraddon2", 
-            "TripId": "Female", 
+            "Requestor": "Rajesh", 
+            "TripId": "19020279382", 
             "RequestDate": "16/07/2018", 
             "TravelDate": "03/08/2019",
             "servicerequested": "b/y",  
-            "estimatedcost": "",
+            "estimatedcost": "7001",
         },
         { 
-            "id": 'Checkbox', 
-            "Requestor": "dridett3", 
-            "TripId": "Male", 
+            "id": '3', 
+            "Requestor": "Akash", 
+            "TripId": "7929892", 
             "RequestDate": "20/11/2016", 
             "TravelDate": "03/08/2019",
             "servicerequested": "b/y",   
-            "estimatedcost": "",      
+            "estimatedcost": "7900",      
         },
         { 
             "id": 4, 
-            "Requestor": "gdefty6", 
-            "TripId": "Female", 
+            "Requestor": "Umang", 
+            "TripId": "28817286371", 
             "RequestDate": "03/08/2019", 
             "TravelDate": "03/08/2019",
             "servicerequested": "b/y",
-            "estimatedcost": "",
+            "estimatedcost": "1600",
         },
         { 
             "id": 5, 
-            "Requestor": "hbeyer9", 
+            "Requestor": "Iman", 
             "TripId": "Male", 
             "RequestDate": "03/08/2019",
             "TravelDate": "03/08/2019",
             "servicerequested": "y",
-            "estimatedcost": "",
+            "estimatedcost": "1567",
         }
     ];
 
@@ -96,8 +97,30 @@ class StatusTable extends Component{
 
     render(){
         return(
-            <div>
-                <GridTable columns={this.columns} rows={this.rows}></GridTable>
+            <div className="container paddingtop10">
+              <div className = "border-outer ">
+                <Table responsive>                
+                <thead>
+                    <tr>
+                         <th >Requestor</th>
+                         <th >Trip Id</th>
+                         <th >Request Date</th>
+                         <th >Service Requested</th>
+                         <th>Estimated Cost</th>
+                         
+                    </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>16</td>
+                           <td>16dnaj</td>
+                       </tr>
+                       <tr>
+                           <td>67</td>
+                       </tr>
+                   </tbody>
+                </Table>
+                </div>
             </div>
         )
     }
