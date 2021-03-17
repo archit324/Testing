@@ -3,6 +3,9 @@ import './App.css';
 import Navtravel from './components/nav-travel'; 
 import StatusBar from './components/statusBar';
 import { Card } from 'react-bootstrap';
+import Travel from './components/blank';
+import Home from './components/home';
+import {Route,Switch} from 'react-router-dom';
 class App extends Component {
  
   render() {
@@ -12,7 +15,14 @@ class App extends Component {
           <Card.Header>
             <Navtravel></Navtravel>
           </Card.Header>
-            <StatusBar></StatusBar>
+            <StatusBar>
+              </StatusBar>
+            <Switch>
+         <Route path="/Travel" component={Travel}></Route>
+         <Route path="/" component={Home}></Route>
+         
+        </Switch>
+        
         </Card>
       </div>
     );
