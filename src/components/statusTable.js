@@ -106,7 +106,7 @@ class StatusTable extends Component{
                           {this.rows.map((item,index)=>{
                               return(
                                   <tr id="row">
-                                      <th ><input type="checkbox"></input></th>
+                                      <th key={index} ><input type="checkbox"></input></th>
 
                                 {/* <td key={index}>{item.id}</td> */}
                                 <td>{item.Requestor }</td>
