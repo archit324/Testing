@@ -1,66 +1,57 @@
 import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table'
-// import GridTable from '@nadavshaar/react-grid-table';
-import { Card } from 'react-bootstrap';
 import "./Component.css"
+import plane from '../20_airtransportation.svg'
+import bed from '../bed.svg'
 class StatusTable extends Component{
 
     rows = [
         { 
-            id: 1, 
             Requestor: "Michael", 
             TripId: "1889289", 
             RequestDate: "12/08/2019", 
             TravelDate: "03/08/2019",
-            servicerequested: "B/Y",
+            servicerequested: plane,
             estimatedcost: "6577",
         },
         { 
-            id: 2, 
             Requestor: "Rajesh", 
             TripId: "19020279382", 
             RequestDate: "16/07/2018", 
             TravelDate: "03/08/2019",
-            servicerequested: "b/y",  
+            servicerequested: plane,  
             estimatedcost: "7001",
         },
         { 
-            "id":'', 
             Requestor: "Akash", 
             TripId: "7929892", 
             RequestDate: "20/11/2016", 
             TravelDate: "03/08/2019",
-            servicerequested: "b/y",   
+            servicerequested: plane,   
             estimatedcost: "7900",      
         },
         { 
-            id: 4, 
             Requestor: "Umang", 
             TripId: "28817286371", 
             RequestDate: "03/08/2019", 
             TravelDate: "03/08/2019",
-            servicerequested: "b/y",
+            servicerequested: plane,
             estimatedcost: "1600",
         },
         { 
-            id: 5, 
             Requestor: "Iman", 
-            TripId: "Male", 
+            TripId: "2889289892", 
             RequestDate: "03/08/2019",
             TravelDate: "03/08/2019",
-            servicerequested: "y",
+            servicerequested: plane,
             estimatedcost: "1567",
         }
     ];
 
      columns = [
+   
         {
-            id: 'checkbox', 
-            field: 'username', 
-            label: 'Username',
-        }, 
-        {
-            id: 2, 
+            id: 1, 
             field: 'Requestor', 
             label: 'Requestor',
         },
@@ -76,7 +67,7 @@ class StatusTable extends Component{
         },
         {
             id: 5, 
-            field: 'TravelDate', 
+            field: 'TravelDate',
             label: 'Travel Dat',
        },
         { 
@@ -94,21 +85,20 @@ class StatusTable extends Component{
     render(){
         return(
             <div className="container paddingtop10">
-              {/* <div className = "border-outer "> */}
                 <Table 
                 borderless
                 id="table"
                 >                
                 <thead>
                     <tr>
-                         <th ><input type="checkbox"></input></th>
-                         <th >Requestor</th>
-                         <th >Trip Id</th>
-                         <th >Request Date</th>
-                         <th >Service Requested</th>
+                         <th><input type="checkbox"></input></th>
+                         <th>Requestor</th>
+                         <th>Trip Id</th>
+                         <th>Request Date</th>
+                         <th>Travel Date</th>
+                         <th>Service Requested</th>
                          <th>Estimated Cost</th>
-                         <th><img src = "https://www.svgrepo.com/show/117126/dots-menu.svg" width="20"
-              height="20"></img></th>
+                         <th>Status</th>
                          
                     </tr>
                    </thead>
@@ -118,23 +108,39 @@ class StatusTable extends Component{
                                   <tr id="row">
                                       <th ><input type="checkbox"></input></th>
 
-                                <td key={index}>{item.id}</td>
+                                {/* <td key={index}>{item.id}</td> */}
                                 <td>{item.Requestor }</td>
                                 <td>{item.TripId }</td>
                                 <td>{item.RequestDate}</td>
                                 <td>{item.TravelDate}</td>
-                                <td>{item.servicerequested}</td>
+                                <td>
+                                    <img src = {item.servicerequested} alt = "AirTravel" width="20" height="20"></img>
+                                    
+                                </td>
                                 <td>{item.estimatedcost}</td>
-                                <td><img src = "https://cdn4.iconfinder.com/data/icons/text-editor/154/horizontal-additional-menu-dots-512.png" width="20"
+                                <td><button className="button-status">Pending</button></td>
+                                <td><img src = "https://cdn4.iconfinder.com/data/icons/text-editor/154/horizontal-additional-menu-dots-512.png" alt="NAN" width="20"
               height="20"></img></td>
                         </tr>
                         )
                               
-                          })}
+                })}
                        
                    </tbody>
                 </Table>
-                {/* </div> */}
+                <div className="font-pagination">
+                <div>Rows per page <select>
+                   <option value="1">1</option>
+                   <option value="2">2</option>  
+
+                </select> 1-5 of 10 results
+                <div className="float-right">
+                <button className="button-page button5">1</button>
+                <button className="button-page button5">2</button>
+                <button className="button-page button5">3</button>
+                </div>
+                </div>
+                </div>
             </div>
         )
     }
